@@ -2,7 +2,7 @@ name: Deploy Next.js site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -26,25 +26,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
 
       - name: Install dependencies
-      # 필요하면 npm ci로 바꿀 수 있음
-        run: npm install
+        run: npm ci   # 또는 npm install
 
-      - name: Build Next.js (static export)
-        env:
-          NEXT_PUBLIC_SITE_URL: "https://hohoho-kim.github.io/wedding-invitation"
+      - name: Build (static export)
         run: npm run build
 
-      - name: Upload GitHub Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./out   # next build 결과(out 폴더)
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
