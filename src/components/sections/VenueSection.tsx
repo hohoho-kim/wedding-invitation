@@ -218,7 +218,7 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
         <VenueTel href={`tel:${weddingConfig.venue.tel}`}>{weddingConfig.venue.tel}</VenueTel>
       </VenueInfo>
       
-      {mapError ? (
+      {/* {mapError ? (
         renderStaticMap()
       ) : (
         <MapContainer ref={mapRef}>
@@ -236,9 +236,9 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
         <NavigateButton onClick={navigateToTmap} $mapType="tmap">
           TMAP
         </NavigateButton>
-      </NavigateButtonsContainer>
+      </NavigateButtonsContainer> */}
       
-      <TransportCard>
+      {/* <TransportCard>
         <CardTitle>대중교통 안내</CardTitle>
         <TransportItem>
           <TransportLabel>지하철</TransportLabel>
@@ -248,15 +248,15 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
           <TransportLabel>버스</TransportLabel>
           <TransportText>{weddingConfig.venue.transportation.bus}</TransportText>
         </TransportItem>
-      </TransportCard>
+      </TransportCard> */}
       
-      <ParkingCard>
+      {/* <ParkingCard>
         <CardTitle>주차 안내</CardTitle>
         <TransportText>{weddingConfig.venue.parking}</TransportText>
-      </ParkingCard>
+      </ParkingCard> */}
       
       {/* 신랑측 배차 안내 - 정보가 있을 때만 표시 */}
-      {weddingConfig.venue.groomShuttle && (
+      {/* {weddingConfig.venue.groomShuttle && (
         <ShuttleCard>
           <ShuttleCardHeader onClick={() => toggleShuttle('groom')} $isExpanded={expandedShuttle === 'groom'}>
             <CardTitle>신랑측 배차 안내</CardTitle>
@@ -287,10 +287,10 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
             </ShuttleContent>
           )}
         </ShuttleCard>
-      )}
+      )} */}
       
       {/* 신부측 배차 안내 - 정보가 있을 때만 표시 */}
-      {weddingConfig.venue.brideShuttle && (
+      {/* {weddingConfig.venue.brideShuttle && (
         <ShuttleCard>
           <ShuttleCardHeader onClick={() => toggleShuttle('bride')} $isExpanded={expandedShuttle === 'bride'}>
             <CardTitle>신부측 배차 안내</CardTitle>
@@ -321,7 +321,7 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
             </ShuttleContent>
           )}
         </ShuttleCard>
-      )}
+      )} */}
     </VenueSectionContainer>
   );
 };

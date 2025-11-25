@@ -21,7 +21,7 @@ const MainSection = () => {
         style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
       />
       <Overlay />
-      <MainContent>
+      {/* <MainContent>
         <MainTitle>{weddingConfig.main.title}</MainTitle>
         <DateText>{weddingConfig.main.date}</DateText>
         <VenueText>{weddingConfig.main.venue}</VenueText>
@@ -29,7 +29,7 @@ const MainSection = () => {
         <HiddenWatermark aria-hidden="true">
           {watermarkId}
         </HiddenWatermark>
-      </MainContent>
+      </MainContent> */}
       
       <ScrollIndicator>
         <i className="fas fa-chevron-down"></i>
